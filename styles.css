@@ -1,116 +1,76 @@
-/* ===== Profile Image ===== */
-.profile-image {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #0078ff;
-  box-shadow: 0 0 15px rgba(0,120,255,0.5);
-  margin: 1rem auto;
-  display: block;
+:root{
+  --bg: #0c0d10;
+  --bg-2:#12141a;
+  --text:#f6f7fb;
+  --muted:#b6b9c6;
+  --primary:#7c5cff;        /* violet */
+  --primary-2:#00d9ff;      /* cyan */
+  --accent:#ff6b6b;         /* coral */
+  --glass: rgba(255,255,255,0.06);
+  --glass-brd: rgba(255,255,255,0.18);
+  --radius: 22px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* ===== Audio Portfolio Styling ===== */
-.audio-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 10% 10%, #1d1333 0%, transparent 60%),
+              radial-gradient(1200px 800px at 90% 20%, #082a35 0%, transparent 60%),
+              linear-gradient(160deg, var(--bg), var(--bg-2));
+  overflow-x:hidden;
 }
 
-@media (min-width: 768px) {
-  .audio-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+/* Canvas backdrop sparkles */
+#bg-canvas{
+  position:fixed; inset:0; z-index:-1;
+  filter: blur(0.4px) contrast(110%);
 }
 
-.audio-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:20;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 20px; backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(10,10,14,0.6), rgba(10,10,14,0.1));
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:800}
+.brand-logo{font-size:1.4rem}
+.brand-text{font-family: Montserrat, Inter, sans-serif; letter-spacing:0.4px}
+.nav{display:flex; gap:14px; align-items:center}
+.nav a{
+  color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px;
+}
+.nav a:hover{color:var(--text); background:rgba(255,255,255,0.06)}
+.theme-toggle{
+  background:var(--glass); border:1px solid var(--glass-brd); color:var(--text);
+  padding:8px 10px; border-radius:12px; cursor:pointer;
 }
 
-.audio-card:hover {
-  transform: translateY(-4px);
+/* Sections */
+.section{padding:70px 20px; max-width:1100px; margin:0 auto}
+.section.alt{background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.0)); border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06)}
+.section-title{
+  font-family: Montserrat, Inter, sans-serif; font-size: clamp(26px, 4vw, 38px); margin:0 0 4px;
+  letter-spacing:0.5px;
+}
+.section-sub{color:var(--muted); margin-top:0}
+
+/* Glass card */
+.glass{
+  background: var(--glass);
+  border: 1px solid var(--glass-brd);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-.audio-card h3 {
-  margin-bottom: 0.25rem;
-  font-size: 1.2rem;
-  color: #222;
-}
-
-/* ===== Player Controls ===== */
-.audio-player {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.play-button {
-  background: #0078ff;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease;
-  font-size: 1rem;
-}
-
-.play-button:hover {
-  background: #005fcc;
-}
-
-.progress-container {
-  flex: 1;
-  height: 6px;
-  background: #eee;
-  border-radius: 3px;
-  cursor: pointer;
-  position: relative;
-}
-
-.progress-bar {
-  height: 100%;
-  width: 0;
-  background: #0078ff;
-  border-radius: 3px;
-}
-
-.time {
-  font-size: 0.8rem;
-  min-width: 80px;
-  text-align: right;
-  color: #555;
-}
-
-/* ===== Tabs ===== */
-.portfolio-tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-  gap: 0.5rem;
-}
-
-.tab-button {
-  background: #f1f1f1;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-}
-
-.tab-button.active,
-.tab-button:hover {
-  background: #0078ff;
-  color: #fff;
-}
+/* Hero */
+.hero{padding: 80px 20px 20px; max-width:1100px; margin:0 auto}
+.hero-card{display:grid; gap:28px; grid-template-columns: 1fr 1.6fr; padding:26px}
+.hero-media{display:flex; align-items:center; justify-content:center}
+.avatar{
+  width:min(340px, 80%
