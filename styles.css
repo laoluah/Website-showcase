@@ -1,76 +1,110 @@
-:root{
-  --bg: #0c0d10;
-  --bg-2:#12141a;
-  --text:#f6f7fb;
-  --muted:#b6b9c6;
-  --primary:#7c5cff;        /* violet */
-  --primary-2:#00d9ff;      /* cyan */
-  --accent:#ff6b6b;         /* coral */
-  --glass: rgba(255,255,255,0.06);
-  --glass-brd: rgba(255,255,255,0.18);
-  --radius: 22px;
-  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+:root {
+  --bg: linear-gradient(135deg, #7c5cff, #00d9ff, #ff6b6b);
+  --text: #fff;
+  --accent: #222;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--text);
-  background: radial-gradient(1200px 800px at 10% 10%, #1d1333 0%, transparent 60%),
-              radial-gradient(1200px 800px at 90% 20%, #082a35 0%, transparent 60%),
-              linear-gradient(160deg, var(--bg), var(--bg-2));
-  overflow-x:hidden;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Inter, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
 }
 
-/* Canvas backdrop sparkles */
-#bg-canvas{
-  position:fixed; inset:0; z-index:-1;
-  filter: blur(0.4px) contrast(110%);
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px;
 }
 
-/* Header */
-.site-header{
-  position:sticky; top:0; z-index:20;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:12px 20px; backdrop-filter: blur(10px);
-  background: linear-gradient(180deg, rgba(10,10,14,0.6), rgba(10,10,14,0.1));
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:800}
-.brand-logo{font-size:1.4rem}
-.brand-text{font-family: Montserrat, Inter, sans-serif; letter-spacing:0.4px}
-.nav{display:flex; gap:14px; align-items:center}
-.nav a{
-  color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px;
-}
-.nav a:hover{color:var(--text); background:rgba(255,255,255,0.06)}
-.theme-toggle{
-  background:var(--glass); border:1px solid var(--glass-brd); color:var(--text);
-  padding:8px 10px; border-radius:12px; cursor:pointer;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Sections */
-.section{padding:70px 20px; max-width:1100px; margin:0 auto}
-.section.alt{background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.0)); border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06)}
-.section-title{
-  font-family: Montserrat, Inter, sans-serif; font-size: clamp(26px, 4vw, 38px); margin:0 0 4px;
-  letter-spacing:0.5px;
-}
-.section-sub{color:var(--muted); margin-top:0}
-
-/* Glass card */
-.glass{
-  background: var(--glass);
-  border: 1px solid var(--glass-brd);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* Hero */
-.hero{padding: 80px 20px 20px; max-width:1100px; margin:0 auto}
-.hero-card{display:grid; gap:28px; grid-template-columns: 1fr 1.6fr; padding:26px}
-.hero-media{display:flex; align-items:center; justify-content:center}
-.avatar{
-  width:min(340px, 80%
+h1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 2.2rem;
+}
+
+.bio {
+  max-width: 600px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.reels h2, .contact h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.reel-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.reel-buttons button {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--accent);
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.15s, background 0.3s;
+}
+
+.reel-buttons button:hover {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
+
+.reel-buttons button.playing {
+  background: #ffe066;
+}
+
+.contact-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+footer {
+  padding: 20px;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.2);
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
