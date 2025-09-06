@@ -1,51 +1,56 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Laolu Awogbade — Voiceover & More</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <img src="assets/Voiceover_face.jpeg" alt="Portrait of Laolu Awogbade" class="avatar" />
-      <h1>Laolu Awogbade</h1>
-      <p class="bio">
-        I’m Laolu — at the intersection of <strong>sports</strong>, <strong>technology</strong>, 
-        <strong>law</strong>, and <strong>acting</strong>. I bring crisp, versatile voiceovers with
-        a modern sound, backed by creative flair and analytical rigor.
-      </p>
-    </section>
+<main>
+  <!-- HERO -->
+  <section class="hero glass">
+    <img src="https://laoluah.github.io/Website-showcase/assets/Voiceover_face.jpeg" 
+         alt="Portrait of Laolu Awogbade" class="avatar" />
+    <h1>Laolu Awogbade</h1>
+    <p class="bio">
+      I’m Laolu — at the intersection of <strong>sports</strong>, <strong>technology</strong>, 
+      <strong>law</strong>, and <strong>acting</strong>.  
+      I bring crisp, versatile voiceovers with a modern sound, backed by creative flair and analytical rigor.
+    </p>
+  </section>
 
-    <!-- VOICE REELS -->
-    <section class="reels">
-      <h2>🎧 Voiceover Reels</h2>
-      <div class="reel-buttons">
-        <button data-track="assets/reel_commercial.mp3">Commercial</button>
-        <button data-track="assets/reel_narration.mp3">Narration</button>
-        <button data-track="assets/reel_character.mp3">Character</button>
-        <button data-track="assets/reel_ivr.mp3">IVR / Telephony</button>
-        <button data-track="assets/reel_elearning.mp3">eLearning</button>
-        <button data-track="assets/reel_sports_announce.mp3">Sports Announce</button>
-      </div>
-      <audio id="player"></audio>
-    </section>
+  <!-- VOICE REELS -->
+  <section class="reels">
+    <h2>🎧 Voiceover Reels</h2>
+    <div class="reel-grid">
+      <button class="reel-card glass" data-track="https://laoluah.github.io/Website-showcase/assets/reel_commercial.mp3">
+        <span class="title">Commercial</span>
+        <span class="subtitle">Energetic, persuasive, ad-ready</span>
+      </button>
+      <button class="reel-card glass" data-track="https://laoluah.github.io/Website-showcase/assets/reel_narration.mp3">
+        <span class="title">Narration</span>
+        <span class="subtitle">Smooth, clear, storytelling</span>
+      </button>
+      <button class="reel-card glass" data-track="https://laoluah.github.io/Website-showcase/assets/reel_character.mp3">
+        <span class="title">Character</span>
+        <span class="subtitle">Distinct voices, playful & dramatic</span>
+      </button>
+      <button class="reel-card glass" data-track="https://laoluah.github.io/Website-showcase/assets/reel_ivr.mp3">
+        <span class="title">IVR / Telephony</span>
+        <span class="subtitle">Professional, friendly, welcoming</span>
+      </button>
+      <button class="reel-card glass" data-track="https://laoluah.github.io/Website-showcase/assets/reel_elearning.mp3">
+        <span class="title">eLearning</span>
+        <span class="subtitle">Engaging, educational clarity</span>
+      </button>
+      <button class="reel-card glass" data-track="https://laoluah.github.io/Website-showcase/assets/reel_sports_announce.mp3">
+        <span class="title">Sports Announce</span>
+        <span class="subtitle">High-energy, stadium-style hype</span>
+      </button>
+    </div>
+    <audio id="player"></audio>
+  </section>
 
-    <!-- CONTACT -->
-    <section class="contact">
-      <h2>📨 Contact</h2>
-      <p>Bookings & enquiries:</p>
-      <a href="mailto:laoluah@gmail.com" class="contact-link">laoluah@gmail.com</a>
-    </section>
-  </main>
+  <!-- CONTACT -->
+  <section class="contact glass">
+    <h2>📨 Contact</h2>
+    <p>Bookings & enquiries:</p>
+    <a href="mailto:laoluah@gmail.com" class="contact-link">laoluah@gmail.com</a>
+  </section>
+</main>
 
-  <footer>
-    © <span id="year"></span> Laolu Awogbade
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<footer>
+  © <span id="year"></span> Laolu Awogbade
+</footer>
