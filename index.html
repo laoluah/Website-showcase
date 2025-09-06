@@ -82,36 +82,12 @@
     <div class="container">
       <h2 class="section-title">My <span>Skills</span></h2>
       <div class="skills-grid">
-        <div class="skill-card" data-delay="0">
-          <div class="skill-icon"><i class="fas fa-code"></i></div>
-          <h3>HTML</h3>
-          <p>Semantic markup, accessibility, and responsive layouts that provide a solid foundation for any web project.</p>
-        </div>
-        <div class="skill-card" data-delay="150">
-          <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
-          <h3>CSS</h3>
-          <p>Modern styling with CSS Grid, Flexbox, animations, and transitions to create engaging user interfaces.</p>
-        </div>
-        <div class="skill-card" data-delay="300">
-          <div class="skill-icon"><i class="fas fa-js-square"></i></div>
-          <h3>JavaScript</h3>
-          <p>Vanilla JavaScript for interactivity, DOM manipulation, and creating dynamic user experiences without dependencies.</p>
-        </div>
-        <div class="skill-card" data-delay="450">
-          <div class="skill-icon"><i class="fas fa-microphone"></i></div>
-          <h3>Voiceover</h3>
-          <p>Professional voice acting for animations, commercials, documentaries, and character work with a versatile vocal range.</p>
-        </div>
-        <div class="skill-card" data-delay="600">
-          <div class="skill-icon"><i class="fas fa-edit"></i></div>
-          <h3>Content Creation</h3>
-          <p>Crafting engaging content that tells stories and connects with audiences across different mediums.</p>
-        </div>
-        <div class="skill-card" data-delay="750">
-          <div class="skill-icon"><i class="fas fa-bolt"></i></div>
-          <h3>Performance</h3>
-          <p>Bringing scripts to life with authenticity and emotional resonance from my acting background.</p>
-        </div>
+        <div class="skill-card"><i class="fas fa-code"></i><h3>HTML</h3></div>
+        <div class="skill-card"><i class="fas fa-paint-brush"></i><h3>CSS</h3></div>
+        <div class="skill-card"><i class="fas fa-js-square"></i><h3>JavaScript</h3></div>
+        <div class="skill-card"><i class="fas fa-microphone"></i><h3>Voiceover</h3></div>
+        <div class="skill-card"><i class="fas fa-edit"></i><h3>Content Creation</h3></div>
+        <div class="skill-card"><i class="fas fa-bolt"></i><h3>Performance</h3></div>
       </div>
     </div>
   </section>
@@ -123,85 +99,147 @@
       <p class="section-description">Listen to samples of my voiceover work across different categories. Each sample demonstrates my versatility and ability to embody different characters and tones.</p>
       
       <div class="portfolio-tabs">
-        <button class="tab-button active" data-tab="all"><i class="fas fa-circle-play"></i><span>All</span></button>
-        <button class="tab-button" data-tab="character"><i class="fas fa-theater-masks"></i><span>Character</span></button>
-        <button class="tab-button" data-tab="commercial"><i class="fas fa-shopping-cart"></i><span>Commercial</span></button>
-        <button class="tab-button" data-tab="documentary"><i class="fas fa-film"></i><span>Documentary</span></button>
-        <button class="tab-button" data-tab="corporate"><i class="fas fa-briefcase"></i><span>Corporate</span></button>
-        <button class="tab-button" data-tab="audiobook"><i class="fas fa-book"></i><span>Audiobook</span></button>
+        <button class="tab-button active" data-tab="all"><i class="fas fa-circle-play"></i> All</button>
+        <button class="tab-button" data-tab="character"><i class="fas fa-theater-masks"></i> Character</button>
+        <button class="tab-button" data-tab="commercial"><i class="fas fa-shopping-cart"></i> Commercial</button>
+        <button class="tab-button" data-tab="documentary"><i class="fas fa-film"></i> Documentary</button>
+        <button class="tab-button" data-tab="corporate"><i class="fas fa-briefcase"></i> Corporate</button>
+        <button class="tab-button" data-tab="audiobook"><i class="fas fa-book"></i> Audiobook</button>
+        <button class="tab-button" data-tab="tv"><i class="fas fa-tv"></i> TV</button>
       </div>
       
       <div class="tab-content active" id="tab-all">
         <div class="audio-grid">
-          <!-- Character -->
-          <div class="audio-card" data-category="character">
-            <h3>Character Demo</h3>
-            <p>Versatile character voiceover demonstrating range and acting abilities.</p>
-            <div class="audio-player" data-src="VO_LAwogbade_CHARACTER_01.mp3" data-title="Character Demo">
-              <div class="player-controls">
-                <button class="play-button"><i class="fas fa-play"></i></button>
-                <div class="progress-container"><div class="progress-bar"></div></div>
-                <div class="time">00:00 / 00:00</div>
-              </div>
-              <div class="volume-controls">
-                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
-                <div class="volume-slider"><div class="volume-progress"></div></div>
-              </div>
-            </div>
-          </div>
-          <!-- Commercial -->
-          <div class="audio-card" data-category="commercial">
-            <h3>Commercial Demo</h3>
-            <p>Engaging commercial voiceover for brands and advertising.</p>
-            <div class="audio-player" data-src="VO_LAwogbade_COMMERCIAL_01.mp3" data-title="Commercial Demo">
-              <div class="player-controls">
-                <button class="play-button"><i class="fas fa-play"></i></button>
-                <div class="progress-container"><div class="progress-bar"></div></div>
-                <div class="time">00:00 / 00:00</div>
-              </div>
-              <div class="volume-controls">
-                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
-                <div class="volume-slider"><div class="volume-progress"></div></div>
-              </div>
-            </div>
-          </div>
-          <!-- Documentary -->
-          <div class="audio-card" data-category="documentary">
-            <h3>Documentary Demo</h3>
-            <p>Authoritative and informative narration for documentary content.</p>
-            <div class="audio-player" data-src="VO_LAwogbade_DOCUMENTARY_01.mp3" data-title="Documentary Demo">
-              <div class="player-controls">
-                <button class="play-button"><i class="fas fa-play"></i></button>
-                <div class="progress-container"><div class="progress-bar"></div></div>
-                <div class="time">00:00 / 00:00</div>
-              </div>
-              <div class="volume-controls">
-                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
-                <div class="volume-slider"><div class="volume-progress"></div></div>
-              </div>
-            </div>
-          </div>
-          <!-- Corporate -->
-          <div class="audio-card" data-category="corporate">
-            <h3>Corporate Demo</h3>
-            <p>Professional corporate narration for business presentations and explainer videos.</p>
-            <div class="audio-player" data-src="VO_LAwogbade_CORPORATE_01.mp3" data-title="Corporate Demo">
-              <div class="player-controls">
-                <button class="play-button"><i class="fas fa-play"></i></button>
-                <div class="progress-container"><div class="progress-bar"></div></div>
-                <div class="time">00:00 / 00:00</div>
-              </div>
-              <div class="volume-controls">
-                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
-                <div class="volume-slider"><div class="volume-progress"></div></div>
-              </div>
-            </div>
-          </div>
-          <!-- Audiobook -->
-          <div class="audio-card" data-category="audiobook">
+          <div class="audio-card" data-category="audiobook" data-src="VO_LAwogbade_AUDIOBOOK_01.mp3">
             <h3>Audiobook Demo</h3>
-            <p>Expressive and engaging narration for audiobooks and long-form content.</p>
-            <div class="audio-player" data-src="VO_LAwogbade_AUDIOBOOK_01.mp3" data-title="Audiobook Demo">
+            <p>Expressive and engaging narration for audiobooks.</p>
+            <div class="audio-player">
               <div class="player-controls">
                 <button class="play-button"><i class="fas fa-play"></i></button>
-                <div class="progress-contain
+                <div class="progress-container"><div class="progress-bar"></div></div>
+                <div class="time">00:00 / 00:00</div>
+              </div>
+              <div class="volume-controls">
+                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
+                <div class="volume-slider"><div class="volume-progress"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="audio-card" data-category="character" data-src="VO_LAwogbade_CHARACTER_01.mp3">
+            <h3>Character Demo</h3>
+            <p>Versatile character voiceover demonstrating range.</p>
+            <div class="audio-player">
+              <div class="player-controls">
+                <button class="play-button"><i class="fas fa-play"></i></button>
+                <div class="progress-container"><div class="progress-bar"></div></div>
+                <div class="time">00:00 / 00:00</div>
+              </div>
+              <div class="volume-controls">
+                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
+                <div class="volume-slider"><div class="volume-progress"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="audio-card" data-category="commercial" data-src="VO_LAwogbade_COMMERCIAL_01.mp3">
+            <h3>Commercial Demo</h3>
+            <p>Engaging commercial voiceover for brands.</p>
+            <div class="audio-player">
+              <div class="player-controls">
+                <button class="play-button"><i class="fas fa-play"></i></button>
+                <div class="progress-container"><div class="progress-bar"></div></div>
+                <div class="time">00:00 / 00:00</div>
+              </div>
+              <div class="volume-controls">
+                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
+                <div class="volume-slider"><div class="volume-progress"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="audio-card" data-category="corporate" data-src="VO_LAwogbade_CORPORATE_01.mp3">
+            <h3>Corporate Demo</h3>
+            <p>Professional corporate narration.</p>
+            <div class="audio-player">
+              <div class="player-controls">
+                <button class="play-button"><i class="fas fa-play"></i></button>
+                <div class="progress-container"><div class="progress-bar"></div></div>
+                <div class="time">00:00 / 00:00</div>
+              </div>
+              <div class="volume-controls">
+                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
+                <div class="volume-slider"><div class="volume-progress"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="audio-card" data-category="documentary" data-src="VO_LAwogbade_DOCUMENTARY_01.mp3">
+            <h3>Documentary Demo</h3>
+            <p>Authoritative narration for documentaries.</p>
+            <div class="audio-player">
+              <div class="player-controls">
+                <button class="play-button"><i class="fas fa-play"></i></button>
+                <div class="progress-container"><div class="progress-bar"></div></div>
+                <div class="time">00:00 / 00:00</div>
+              </div>
+              <div class="volume-controls">
+                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
+                <div class="volume-slider"><div class="volume-progress"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="audio-card" data-category="tv" data-src="VO_LAwogbade_TV_01.mp3">
+            <h3>TV Demo</h3>
+            <p>Dynamic narration for television.</p>
+            <div class="audio-player">
+              <div class="player-controls">
+                <button class="play-button"><i class="fas fa-play"></i></button>
+                <div class="progress-container"><div class="progress-bar"></div></div>
+                <div class="time">00:00 / 00:00</div>
+              </div>
+              <div class="volume-controls">
+                <button class="volume-button"><i class="fas fa-volume-up"></i></button>
+                <div class="volume-slider"><div class="volume-progress"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-contact">
+        <p>Want to hear more or discuss a potential project? <a href="#contact" class="text-link">Get in touch!</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist Section -->
+  <section id="waitlist" class="waitlist">
+    <div class="container">
+      <h2 class="section-title">Join My <span>Waitlist</span></h2>
+      <form id="waitlist-form" class="waitlist-form">
+        <input type="text" placeholder="Your Name" required/>
+        <input type="email" placeholder="Your Email" required/>
+        <button type="submit" class="btn btn-primary">Join Waitlist</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <div class="contact-grid">
+        <div class="contact-card"><i class="fas fa-envelope"></i><a href="mailto:laolu.awogbade@gmail.com">laolu.awogbade@gmail.com</a></div>
+        <div class="contact-card"><i class="fas fa-phone"></i><a href="tel:+447738905876">+44 7738 905876</a></div>
+        <div class="contact-card"><i class="fab fa-github"></i><a href="https://github.com/laoluah">github.com/laoluah</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> Laolu Awogbade. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
