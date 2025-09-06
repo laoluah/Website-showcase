@@ -4,201 +4,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laolu Awogbade — Voiceover & More</title>
-  <meta name="description" content="Laolu Awogbade — voiceover reels, bio, and contact." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%2772%27 x=%2712%27 font-size=%2780%27%3E🎙️%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Home">
-      <span class="brand-logo">🎙️</span>
-      <span class="brand-text">Laolu Awogbade</span>
-    </a>
-    <nav class="nav">
-      <a href="#reels">Reels</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☾</button>
-    </nav>
-  </header>
-
-  <main id="top">
+  <main>
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-card glass">
-        <div class="hero-media">
-          <!-- Place your image at /assets/Voiceover_face.jpeg or update src -->
-          <img src="assets/Voiceover_face.jpeg" alt="Portrait of Laolu Awogbade" class="avatar" />
-        </div>
-        <div class="hero-copy">
-          <h1 class="title">
-            <span class="title-top">Laolu Awogbade</span>
-            <span class="title-sub">Voiceover · Sports · Tech · Law · Acting</span>
-          </h1>
-          <p class="lead">
-            I’m Laolu — at the intersection of <strong>sports</strong>, <strong>technology</strong>, <strong>law</strong>, and
-            <strong>acting</strong>. I bring crisp, characterful voiceover with a modern sound, backed by analytical rigor and creative flair.
-          </p>
-          <div class="cta-row">
-            <a href="#reels" class="btn primary">Listen to my reels</a>
-            <a href="#contact" class="btn">Book me</a>
-          </div>
-        </div>
-      </div>
+      <img src="assets/Voiceover_face.jpeg" alt="Portrait of Laolu Awogbade" class="avatar" />
+      <h1>Laolu Awogbade</h1>
+      <p class="bio">
+        I’m Laolu — at the intersection of <strong>sports</strong>, <strong>technology</strong>, 
+        <strong>law</strong>, and <strong>acting</strong>. I bring crisp, versatile voiceovers with
+        a modern sound, backed by creative flair and analytical rigor.
+      </p>
     </section>
 
-    <!-- REELS -->
-    <section id="reels" class="section">
-      <h2 class="section-title">Voiceover Reels</h2>
-      <p class="section-sub">Clean, modern players with downloadable tracks.</p>
-
-      <div class="reels-grid">
-        <!-- Update src values to your actual MP3 filenames in /assets -->
-        <article class="reel-card glass" data-track="assets/reel_commercial.mp3">
-          <header class="reel-head">
-            <h3>Commercial Reel</h3>
-            <button class="play-btn" aria-label="Play Commercial Reel">▶</button>
-          </header>
-          <div class="progress" role="progressbar" aria-label="Commercial progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="bar"></div>
-          </div>
-          <footer class="reel-foot">
-            <span class="time"><span class="current">0:00</span> / <span class="duration">0:00</span></span>
-            <div class="controls">
-              <input class="seek" type="range" min="0" max="100" value="0" aria-label="Seek Commercial Reel" />
-              <button class="mute" aria-label="Mute">🔈</button>
-              <a class="download" href="assets/reel_commercial.mp3" download aria-label="Download Commercial Reel">⤓</a>
-            </div>
-          </footer>
-        </article>
-
-        <article class="reel-card glass" data-track="assets/reel_narration.mp3">
-          <header class="reel-head">
-            <h3>Narration Reel</h3>
-            <button class="play-btn" aria-label="Play Narration Reel">▶</button>
-          </header>
-          <div class="progress"><div class="bar"></div></div>
-          <footer class="reel-foot">
-            <span class="time"><span class="current">0:00</span> / <span class="duration">0:00</span></span>
-            <div class="controls">
-              <input class="seek" type="range" min="0" max="100" value="0" aria-label="Seek Narration Reel" />
-              <button class="mute" aria-label="Mute">🔈</button>
-              <a class="download" href="assets/reel_narration.mp3" download aria-label="Download Narration Reel">⤓</a>
-            </div>
-          </footer>
-        </article>
-
-        <article class="reel-card glass" data-track="assets/reel_character.mp3">
-          <header class="reel-head">
-            <h3>Character Reel</h3>
-            <button class="play-btn" aria-label="Play Character Reel">▶</button>
-          </header>
-          <div class="progress"><div class="bar"></div></div>
-          <footer class="reel-foot">
-            <span class="time"><span class="current">0:00</span> / <span class="duration">0:00</span></span>
-            <div class="controls">
-              <input class="seek" type="range" min="0" max="100" value="0" aria-label="Seek Character Reel" />
-              <button class="mute" aria-label="Mute">🔈</button>
-              <a class="download" href="assets/reel_character.mp3" download aria-label="Download Character Reel">⤓</a>
-            </div>
-          </footer>
-        </article>
-
-        <article class="reel-card glass" data-track="assets/reel_ivr.mp3">
-          <header class="reel-head">
-            <h3>IVR / Telephony</h3>
-            <button class="play-btn" aria-label="Play IVR Reel">▶</button>
-          </header>
-          <div class="progress"><div class="bar"></div></div>
-          <footer class="reel-foot">
-            <span class="time"><span class="current">0:00</span> / <span class="duration">0:00</span></span>
-            <div class="controls">
-              <input class="seek" type="range" min="0" max="100" value="0" aria-label="Seek IVR Reel" />
-              <button class="mute" aria-label="Mute">🔈</button>
-              <a class="download" href="assets/reel_ivr.mp3" download aria-label="Download IVR Reel">⤓</a>
-            </div>
-          </footer>
-        </article>
-
-        <article class="reel-card glass" data-track="assets/reel_elearning.mp3">
-          <header class="reel-head">
-            <h3>eLearning</h3>
-            <button class="play-btn" aria-label="Play eLearning Reel">▶</button>
-          </header>
-          <div class="progress"><div class="bar"></div></div>
-          <footer class="reel-foot">
-            <span class="time"><span class="current">0:00</span> / <span class="duration">0:00</span></span>
-            <div class="controls">
-              <input class="seek" type="range" min="0" max="100" value="0" aria-label="Seek eLearning Reel" />
-              <button class="mute" aria-label="Mute">🔈</button>
-              <a class="download" href="assets/reel_elearning.mp3" download aria-label="Download eLearning Reel">⤓</a>
-            </div>
-          </footer>
-        </article>
-
-        <article class="reel-card glass" data-track="assets/reel_sports_announce.mp3">
-          <header class="reel-head">
-            <h3>Sports Announce</h3>
-            <button class="play-btn" aria-label="Play Sports Announce Reel">▶</button>
-          </header>
-          <div class="progress"><div class="bar"></div></div>
-          <footer class="reel-foot">
-            <span class="time"><span class="current">0:00</span> / <span class="duration">0:00</span></span>
-            <div class="controls">
-              <input class="seek" type="range" min="0" max="100" value="0" aria-label="Seek Sports Reel" />
-              <button class="mute" aria-label="Mute">🔈</button>
-              <a class="download" href="assets/reel_sports_announce.mp3" download aria-label="Download Sports Announce Reel">⤓</a>
-            </div>
-          </footer>
-        </article>
+    <!-- VOICE REELS -->
+    <section class="reels">
+      <h2>🎧 Voiceover Reels</h2>
+      <div class="reel-buttons">
+        <button data-track="assets/reel_commercial.mp3">Commercial</button>
+        <button data-track="assets/reel_narration.mp3">Narration</button>
+        <button data-track="assets/reel_character.mp3">Character</button>
+        <button data-track="assets/reel_ivr.mp3">IVR / Telephony</button>
+        <button data-track="assets/reel_elearning.mp3">eLearning</button>
+        <button data-track="assets/reel_sports_announce.mp3">Sports Announce</button>
       </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section alt">
-      <h2 class="section-title">About</h2>
-      <div class="about-grid">
-        <p class="about">
-          With roots across <em>law</em>, <em>technology</em>, and <em>sport</em>, I deliver voiceovers that are
-          authentic and precise. Whether it’s commercial, narration, eLearning or live-sport style reads, I bring
-          clarity, tone, and timing that land.
-        </p>
-        <ul class="badges">
-          <li>🎧 Broadcast-quality audio</li>
-          <li>⚡ Fast turnaround</li>
-          <li>🧭 Clear, versatile delivery</li>
-          <li>🌍 UK-based</li>
-        </ul>
-      </div>
+      <audio id="player"></audio>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-sub">Bookings & enquiries</p>
-      <div class="contact-card glass">
-        <div class="contact-row">
-          <span>📨 Email</span>
-          <a class="link" href="mailto:laoluah@gmail.com">laoluah@gmail.com</a>
-        </div>
-        <div class="contact-row">
-          <span>🌐 Website</span>
-          <a class="link" href="https://laoluah.github.io/Website-showcase/" target="_blank" rel="noopener">laoluah.github.io/Website-showcase</a>
-        </div>
-      </div>
+    <section class="contact">
+      <h2>📨 Contact</h2>
+      <p>Bookings & enquiries:</p>
+      <a href="mailto:laoluah@gmail.com" class="contact-link">laoluah@gmail.com</a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Laolu Awogbade · Built with HTML/CSS/JS</small>
+  <footer>
+    © <span id="year"></span> Laolu Awogbade
   </footer>
-
-  <!-- One shared, invisible audio element for custom players -->
-  <audio id="shared-audio" preload="metadata"></audio>
 
   <script src="script.js"></script>
 </body>
