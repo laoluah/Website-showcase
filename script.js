@@ -22,7 +22,7 @@ document.querySelectorAll(".audio-card").forEach(card => {
 
   audio.addEventListener("play", () => {
     isPlaying = true;
-    card.audioInstance = audio; // store reference
+    card.audioInstance = audio;
     playBtn.innerHTML = `<i class="fas fa-pause"></i>`;
   });
 
