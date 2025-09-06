@@ -13,7 +13,6 @@
 /* Audio Cards */
 .audio-grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 2rem;
 }
 @media (min-width: 768px) {
@@ -29,7 +28,7 @@
 .audio-card:hover { transform: translateY(-4px); }
 .audio-card h3 { margin: 0 0 .5rem; color: #222; }
 
-/* Player */
+/* Audio Player */
 .audio-player {
   display: flex;
   align-items: center;
@@ -44,17 +43,12 @@
   cursor: pointer;
 }
 .progress-container {
-  flex: 1;
-  height: 6px;
-  background: #eee;
-  border-radius: 3px;
-  position: relative;
+  flex: 1; height: 6px; background: #eee;
+  border-radius: 3px; position: relative;
 }
 .progress-bar {
-  height: 100%;
-  width: 0;
-  background: #0078ff;
-  border-radius: 3px;
+  height: 100%; width: 0;
+  background: #0078ff; border-radius: 3px;
 }
 .time { font-size: .8rem; color: #555; }
 
