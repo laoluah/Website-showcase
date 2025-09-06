@@ -1,16 +1,15 @@
 // Year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Audio player logic
 const audio = document.getElementById("player");
-const buttons = document.querySelectorAll(".reel-buttons button");
+const buttons = document.querySelectorAll(".reel-card");
 let currentBtn = null;
 
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     const track = btn.dataset.track;
 
-    // If same button clicked again: pause/stop
+    // If same button clicked again, toggle play/pause
     if (currentBtn === btn) {
       if (!audio.paused) {
         audio.pause();
@@ -20,17 +19,20 @@ buttons.forEach(btn => {
         btn.classList.add("playing");
       }
     } else {
-      // New track
+      // Stop old button highlight
       if (currentBtn) currentBtn.classList.remove("playing");
+
+      // Load new track
       currentBtn = btn;
       audio.src = track;
       audio.play();
+
       btn.classList.add("playing");
     }
   });
 });
 
-// When track ends, reset button
+// When audio finishes, reset button state
 audio.addEventListener("ended", () => {
   if (currentBtn) currentBtn.classList.remove("playing");
   currentBtn = null;
