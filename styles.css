@@ -1,86 +1,4 @@
-:root {
-  --primary: #7c5cff;
-  --secondary: #00d9ff;
-  --accent: #ff6b6b;
-  --bg: #0c0d10;
-  --text: #fff;
-  --glass: rgba(255,255,255,0.08);
-  --glass-border: rgba(255,255,255,0.18);
-  --radius: 20px;
-  --shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: Inter, sans-serif;
-  color: var(--text);
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  text-align: center;
-  padding: 20px;
-}
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Glass effect */
-.glass {
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 30px;
-}
-
-/* HERO */
-.hero {
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.avatar {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 4px solid white;
-  object-fit: cover;
-  box-shadow: var(--shadow);
-}
-
-h1 {
-  font-family: Montserrat, sans-serif;
-  font-size: 2.5rem;
-}
-
-.bio {
-  line-height: 1.6;
-  font-size: 1.1rem;
-  max-width: 600px;
-}
-
-/* REELS */
-.reels h2 { margin-bottom: 20px; }
-
-.reel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  max-width: 800px;
-}
+/* ... keep everything else the same ... */
 
 .reel-card {
   display: flex;
@@ -95,6 +13,10 @@ h1 {
   transition: transform 0.2s, background 0.3s;
   background: rgba(255,255,255,0.1);
   border-radius: var(--radius);
+}
+
+.reel-card .icon {
+  font-size: 1.6rem;
 }
 
 .reel-card .title {
@@ -120,32 +42,4 @@ h1 {
 
 .reel-card.playing .subtitle {
   color: #333;
-}
-
-/* CONTACT */
-.contact {
-  max-width: 600px;
-}
-
-.contact-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #fff;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-/* FOOTER */
-footer {
-  padding: 20px;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.3);
-  border-radius: var(--radius);
-  margin-top: 40px;
-}
-
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
