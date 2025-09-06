@@ -9,7 +9,7 @@ buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     const track = btn.dataset.track;
 
-    // If same button clicked again, toggle play/pause
+    // Toggle if same button clicked
     if (currentBtn === btn) {
       if (!audio.paused) {
         audio.pause();
@@ -19,20 +19,19 @@ buttons.forEach(btn => {
         btn.classList.add("playing");
       }
     } else {
-      // Stop old button highlight
+      // Stop old button
       if (currentBtn) currentBtn.classList.remove("playing");
 
-      // Load new track
+      // Load and play new track
       currentBtn = btn;
       audio.src = track;
       audio.play();
-
       btn.classList.add("playing");
     }
   });
 });
 
-// When audio finishes, reset button state
+// Reset highlight when finished
 audio.addEventListener("ended", () => {
   if (currentBtn) currentBtn.classList.remove("playing");
   currentBtn = null;
