@@ -1,68 +1,43 @@
-// ===== Audio Playback & Progress =====
-document.querySelectorAll(".audio-card").forEach(card => {
-  const playBtn = card.querySelector(".play-button");
-  const progressBar = card.querySelector(".progress-bar");
-  const timeLabel = card.querySelector(".time");
-  const audio = new Audio(card.dataset.src);
-  let isPlaying = false;
+// Animated background particles (lightweight, no libs)
+(function sparkle(){
+  const c = document.getElementById('bg-canvas');
+  const ctx = c.getContext('2d');
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
 
-  playBtn.addEventListener("click", () => {
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      // Pause any other playing audio
-      document.querySelectorAll(".audio-card").forEach(c => {
-        if (c !== card && c.audioInstance) {
-          c.audioInstance.pause();
-        }
-      });
-      audio.play();
+  let w, h, dots;
+  function resize(){
+    w = c.width = innerWidth * DPR;
+    h = c.height = innerHeight * DPR;
+    c.style.width = innerWidth + 'px';
+    c.style.height = innerHeight + 'px';
+    dots = Array.from({length: Math.floor((w*h) / (22000 * DPR))}, () => ({
+      x: Math.random()*w,
+      y: Math.random()*h,
+      r: Math.random()*1.2 + 0.5,
+      a: Math.random()*Math.PI*2,
+      s: Math.random()*0.6 + 0.1
+    }));
+  }
+  function frame(){
+    ctx.clearRect(0,0,w,h);
+    for(const d of dots){
+      d.x += Math.cos(d.a)*d.s;
+      d.y += Math.sin(d.a)*d.s;
+      if(d.x<0) d.x=w; if(d.x>w) d.x=0; if(d.y<0) d.y=h; if(d.y>h) d.y=0;
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI*2);
+      const g = ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.r*3);
+      g.addColorStop(0,'rgba(124,92,255,0.9)');
+      g.addColorStop(0.5,'rgba(0,217,255,0.5)');
+      g.addColorStop(1,'rgba(255,255,255,0)');
+      ctx.fillStyle = g;
+      ctx.fill();
     }
-  });
+    requestAnimationFrame(frame);
+  }
+  addEventListener('resize', resize);
+  resize(); frame();
+})();
 
-  audio.addEventListener("play", () => {
-    isPlaying = true;
-    card.audioInstance = audio;
-    playBtn.innerHTML = `<i class="fas fa-pause"></i>`;
-  });
-
-  audio.addEventListener("pause", () => {
-    isPlaying = false;
-    playBtn.innerHTML = `<i class="fas fa-play"></i>`;
-  });
-
-  audio.addEventListener("timeupdate", () => {
-    if (audio.duration) {
-      const pct = (audio.currentTime / audio.duration) * 100;
-      progressBar.style.width = pct + "%";
-      timeLabel.textContent =
-        formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
-    }
-  });
-});
-
-function formatTime(seconds) {
-  if (isNaN(seconds)) return "00:00";
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
-}
-
-// ===== Tab Filtering =====
-const tabs = document.querySelectorAll(".tab-button");
-const cards = document.querySelectorAll(".audio-card");
-
-tabs.forEach(btn => {
-  btn.addEventListener("click", () => {
-    tabs.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const category = btn.dataset.tab;
-    cards.forEach(card => {
-      card.style.display =
-        category === "all" || card.dataset.category === category
-          ? "block"
-          : "none";
-    });
-  });
-});
+// Year
+document.getElementById('year').textContent = new Date(
